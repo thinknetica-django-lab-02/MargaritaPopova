@@ -1,10 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block title %}
+    Tian
+{% endblock %}
+{% block content %}
 {% load flatpages %}
 {% get_flatpages as flatpages %}
 <ul>
@@ -13,5 +11,4 @@
     {% endfor %}
 </ul>
 
-</body>
-</html>
+{% endblock %}

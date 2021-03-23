@@ -26,7 +26,7 @@ SECRET_KEY = '-t5@x@w10k@#n=@mp2%z2e2w$pc8*1qe^z_s-ia34g59llkz@n'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-SITE_ID = 3
+SITE_ID = 1
 
 
 # Application definition
@@ -51,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'django.contrib.flatpages.middleware.FlatpageFallbackMiddleware',
 ]
 
 ROOT_URLCONF = 'tian.urls'

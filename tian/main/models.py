@@ -1,7 +1,7 @@
 import json
 import requests
 from django.db import models
-from tian.settings import GOOGLEMAPS_API
+from tian.settings import GOOGLECLOUD_API
 
 
 class Building(models.Model):
@@ -13,7 +13,7 @@ class Building(models.Model):
     def get_address_by_coordinates(self):
         response = requests.get(
            'https://maps.googleapis.com/maps/api/geocode/json?latlng={},{}&key={}'.
-               format(self.lat, self.lng, GOOGLEMAPS_API)).json()
+               format(self.lat, self.lng, GOOGLECLOUD_API)).json()
         return json.loads(response)['formatted_address']
 
     def __str__(self):

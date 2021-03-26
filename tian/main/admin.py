@@ -1,5 +1,5 @@
 from django.contrib import admin
-from main.models import Building, Apartment
+from main.models import Building, Apartment, Location, Street
 from django.contrib.flatpages.admin import FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from django.utils.translation import gettext_lazy as _
@@ -39,4 +39,6 @@ class FlatPageAdmin(FlatPageAdmin):
 
 admin.site.unregister(FlatPage)
 admin.site.register(Apartment)
+admin.site.register(Street)
+admin.site.register(Location)
 admin.site.register(FlatPage, FlatPageAdmin)

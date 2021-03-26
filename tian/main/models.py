@@ -22,6 +22,9 @@ def validate_lng(lng):
 class Location(models.Model):
     name = models.CharField(verbose_name='Населенный пункт', blank=False, max_length=200)
 
+    def __str__(self):
+        return self.name
+
 
 class Street(models.Model):
     name = models.CharField(verbose_name='Улица', max_length=128)

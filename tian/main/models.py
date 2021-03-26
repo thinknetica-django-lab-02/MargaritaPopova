@@ -20,11 +20,10 @@ def validate_lng(lng):
 
 
 class Building(models.Model):
-    stories = models.SmallIntegerField(verbose_name='Этажность', null=True, blank=True)
+    stories = models.PositiveSmallIntegerField(verbose_name='Этажность', null=True, blank=True)
     lat = models.FloatField(verbose_name='Широта', validators=[validate_lat])
     lng = models.FloatField(verbose_name='Долгота', validators=[validate_lng])
-    year = models.SmallIntegerField(verbose_name='Год постройки', null=True, blank=True)
-
+    year = models.PositiveSmallIntegerField(verbose_name='Год постройки', null=True, blank=True)
 
     def get_address_by_coordinates(self):
         from geopy.geocoders import Nominatim

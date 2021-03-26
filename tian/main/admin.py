@@ -16,7 +16,7 @@ class ApartmentInline(admin.TabularInline):
 class BuildingAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {'fields': ('stories', 'year')}),
-        ('Координаты', {'fields': ('lng', 'lat',)}),
+        ('Координаты', {'fields': ('lng', 'lat', 'city', 'street', 'number')}),
     ]
     inlines = [ApartmentInline]
 

@@ -29,6 +29,9 @@ class Location(models.Model):
 class Street(models.Model):
     name = models.CharField(verbose_name='Улица', max_length=128)
 
+    def __str__(self):
+        return self.name
+
 
 class Building(models.Model):
     stories = models.PositiveSmallIntegerField(verbose_name='Этажность', null=True, blank=True)
@@ -52,6 +55,7 @@ class Apartment(models.Model):
     price = models.FloatField(verbose_name='Цена общая')
     area = models.FloatField(verbose_name='Площадь')
     number = models.PositiveSmallIntegerField(verbose_name='Номер квартиры')
+    renovated = models.BooleanField(verbose_name='Ремонт', default=False)
 
     def __str__(self):
         return f'Квартира в {self.building.__str__()}'

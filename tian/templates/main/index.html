@@ -10,5 +10,11 @@
         <li><a href="{{ page.url }}">{{ page.title }}</a></li>
     {% endfor %}
 </ul>
-
+<p class="text-success text-capitalize">{{ request.user }}</p>
+    {% if turn_on_block %}
+        <div>
+        This block depends on a variable
+        </div>
+    {% endif %}
 {% endblock %}
+
